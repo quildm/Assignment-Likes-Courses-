@@ -1,0 +1,29 @@
+Blog.objects.create({{field1}}="{{value}}", {{field2}}="{{value}}", etc)
+Alternative way of creating a record
+b = Blog(name="Disney Blog", desc="Disney stuff")
+b.name = "Disney Blog!"
+b.desc = "Disney stuff!!!"
+b.save()
+
+Dojo.objects.create(name="CodingDojo NY", city="New York", state="NY")
+Ninja.objects.create(first_name="Fire", last_name="Fox", dojo_id=1)
+Dojo.objects.first().ninjas
+Ninja.objects.first().dojo
+
+from apps.dojo_ninjas.models import *
+
+from apps.book_authors.models import *
+Book.objects.first().authors
+Author.objects.first().books
+
+Book.objects.create(name="", desc="")
+Author.objects.create(first_name="Brandon", last_name="Jay", email="jBrandon@notreal.cc")
+
+User.objects.create(first_name="Jon", last_name="Duckett", email="jonduckett@mail.cc")
+
+Book.objects.create(name="Algorithm Challenges- The Dojo Collection", desc="It's really written by Martin Puryear, but Mike is the boss", uploader=User.objects.get(id=2))
+User.objects.get(id=2).all()
+
+
+User.objects.get(id=2).liked_books.add(1,2,3,4,5,6,7)
+User.objects.get(id=1).liked_books.add(1,7)
